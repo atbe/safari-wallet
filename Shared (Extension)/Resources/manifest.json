@@ -23,7 +23,12 @@
     "content_scripts": [{
         "js": [ "content.js" ],
         "matches": [ "<all_urls>" ]
-    }],
+    }
+        ,{
+            "js": ["popup.js"],
+            "matches": [ "<all_urls>" ]
+        }
+    ],
 
     "browser_action": {
         "default_popup": "popup.html",
@@ -34,7 +39,6 @@
             "38": "images/toolbar-icon-38.png"
         }
     },
-
-    "optional_permissions": [ "*://www.example.com/" ],
-    "permissions": [ "nativeMessaging", "tabs" ]
+    "permissions": [ "nativeMessaging", "tabs" , "activeTab"],
+    "optional_permissions": ["<all_urls>"]
 }
